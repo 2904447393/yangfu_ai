@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangfu AI助手</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="user-info" class="hidden">
+        <img id="user-avatar-display" src="" alt="用户头像">
+        <span id="user-name-display"></span>
+    </div>
+    <div id="chat-container">
+        <div id="chat-header">
+            <h1>Yangfu AI助手</h1>
+            <button id="settings-button">设置</button>
+        </div>
+        <div id="chat-box" class="chat-box">
+            <!-- 聊天消息将在这里显示 -->
+        </div>
+        <div id="input-container">
+            <textarea id="chat-input" class="chat-input" placeholder="输入您的问题..." rows="1"></textarea>
+            <button id="send-button" class="send-button">发送</button>
+        </div>
+    </div>
+
+    <!-- 将注册按钮移到这里 -->
+    <div id="register-container">
+        <button id="register-button">注册</button>
+    </div>
+
+    <!-- 添加悬浮文本 -->
+    <div id="floating-message" class="hidden">注册成功</div>
+
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <h2>设置</h2>
+            <div class="setting-item">
+                <label for="user-name">用户名：</label>
+                <input type="text" id="user-name" value="用户">
+            </div>
+            <div class="setting-item">
+                <label for="user-avatar">用户头像：</label>
+                <input type="file" id="user-avatar" accept="image/*">
+            </div>
+            <div class="setting-item">
+                <label for="ai-avatar">AI头像：</label>
+                <input type="file" id="ai-avatar" accept="image/*">
+            </div>
+            <div class="setting-item">
+                <label for="color-theme">色彩主题：</label>
+                <select id="color-theme">
+                    <option value="blue">蓝色主题</option>
+                    <option value="green">绿色主题</option>
+                    <option value="purple">紫色主题</option>
+                    <option value="orange">橙色主题</option>
+                    <option value="pink">粉色主题</option>
+                </select>
+            </div>
+            <div class="setting-item">
+                <label for="font-family">字体：</label>
+                <select id="font-family">
+                    <option value="kaiti">楷体</option>
+                    <option value="xingkai">行楷</option>
+                    <option value="xingshu">行书</option>
+                    <option value="songti">宋体</option>
+                </select>
+            </div>
+            <button id="save-settings">保存设置</button>
+        </div>
+    </div>
+
+    <!-- 在 body 标签的末尾，在 script 标签之前添加以下代码 -->
+    <div id="register-modal" class="modal">
+        <div class="modal-content">
+            <h2>用电话注册</h2>
+            <div id="phone-step">
+                <input type="tel" id="phone-input" placeholder="请输入手机号" required>
+                <button id="send-code-button">发送验证码</button>
+                <input type="text" id="code-input" placeholder="请输入验证码" required>
+                <button id="verify-code-button">验证</button>
+            </div>
+            <div id="password-step" style="display: none;">
+                <input type="password" id="password-input" placeholder="请设置密码" required>
+                <p id="password-hint">密码必须包含大小写字母、数字和标点符号</p>
+                <button id="submit-register-button">提交</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
